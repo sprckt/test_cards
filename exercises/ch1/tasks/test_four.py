@@ -1,6 +1,7 @@
 """Test the Task data type."""
 
 from collections import namedtuple
+import pytest
 
 
 Task = namedtuple('Task', ['summary', 'owner', 'done', 'id'])
@@ -17,7 +18,7 @@ def test_asdict():
                 'id': 21}
     assert t_dict == expected
 
-
+@pytest.mark.run_this
 def test_replace():
     """replace() should change passed in fields."""
     t_before = Task('finish book', 'brian', False)
